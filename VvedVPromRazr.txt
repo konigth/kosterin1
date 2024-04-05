@@ -1,0 +1,69 @@
+1) Зайти в мудл.
+2) Открыть экзамен.
+3) Скачать прикрепленные файлы.
+4) Создать папку на рабочем столе.
+5) Распаковать все в папку на рабочем столе(все содержимое)
+6) Закинуть Папку в ИДЕЮ
+7) Терминал
+8) Открыть гитбаш
+9) git init (Появится папка .git)
+10) gradle init - basic - groovy - enter - yes - build successful
+11) ./gradlew build
+12) Cправа снизу load gradle project
+13) Справа сверху появляется слон с названием папки
+14) файл build.gradle 
+вставить 
+
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform("org.junit:junit-bom:5.9.3")
+    testImplementation "org.junit.jupiter:junit-jupiter"
+    testImplementation "org.assertj:assertj-core:3.24.2"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
+
+15) Дважды ctrl нажать - gradle build - enter
+16) В проекте создать новую папку - 'src'
+17) В ней еще две папки: main и test
+18) В каждую из них по папке java
+19) Файл джава без теста в названии закинуть в src/main/java
+20) Файл с тестом в src/test/java
+21) Заходишь в идею - дважды ctrl нажать - gradle build - enter
+
+
+22) Зайти в гитхаб - мои репозтории - создать репозиторий(новый публичный)
+23) Найти строку "git remote add origin https://github.com/konigth/reposit.git" и скопировать в буфер обмена и вставить в терминал.
+24) git add . 
+25) git commit -m "Название коммита"
+26) git push origin master
+27) https://jenkins.ivt.yarsu.ru перейти fanisimov LazUrnyy123
+28) New item - freestyle - source code managment (git) - ссылка на проект - 
+29) build steps
+30) invoke gradle script
+31) use gradle wrapper с галочкой
+32) tasks - build test
+33) post-build actions publish Junit test result report
+34) ссылка на репорт - папка build - test-results - test - copy path - build/test-results/test
+35) закидываем в дженкинс - /*.xml
+36) record Jacoco coverage report - exclusions - **/*Test*.class
+37) две ссылки
